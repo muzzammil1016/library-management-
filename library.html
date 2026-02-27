@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studypal | Digital Library</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+
+    <div id="role-page" class="screen active">
+        <div class="hero">
+            <div class="glass-container">
+                <h1>STUDYPAL</h1>
+                <p>Intelligent Digital Library System</p>
+                <div class="role-selection">
+                    <button class="btn student-btn" onclick="showLogin('Student')">I am a Student</button>
+                    <button class="btn admin-btn" onclick="showLogin('Librarian')">I am a Librarian</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="login-page" class="screen">
+        <div class="login-overlay">
+            <div class="form-card glass-container">
+                <h2 id="login-title">Student Login</h2>
+                <input type="text" placeholder="Username / ID" id="username">
+                <input type="password" placeholder="Password" id="password">
+                <button class="btn primary-btn" onclick="handleLogin()">Login</button>
+                <p onclick="showPage('role-page')" class="back-link">← Back to selection</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="home-page" class="screen">
+        <nav class="navbar">
+            <span class="logo">Studypal</span>
+            <span id="user-display" class="user-info">Student Mode</span>
+            <button class="logout-btn" onclick="location.reload()">Logout</button>
+        </nav>
+
+        <div class="dashboard">
+            <div class="grid" id="menu-grid">
+                </div>
+        </div>
+    </div>
+
+    <script src="library.js"></script>
+</body>
+</html>
